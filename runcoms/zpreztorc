@@ -37,8 +37,12 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
+  'git' \
   'completion' \
+  'syntax-highlighting' \
   'history-substring-search' \
+  'archive' \
+  'autosuggestions' \
   'prompt'
 
 #
@@ -47,6 +51,7 @@ zstyle ':prezto:load' pmodule \
 
 # Set the query found color.
 # zstyle ':prezto:module:autosuggestions:color' found ''
+zstyle ':prezto:module:autosuggestions:color' 'yes'
 
 #
 # Completions
@@ -64,7 +69,7 @@ zstyle ':prezto:load' pmodule \
 # zstyle ':prezto:module:editor' wordchars '*?_-.[]~&;!#$%^(){}<>'
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'emacs'
+zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -78,6 +83,10 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
 # zstyle ':prezto:module:git:status:ignore' submodules 'all'
+
+# Disable Git aliases
+zstyle ':prezto:module:git:alias' skip 'yes'
+
 
 #
 # GNU Utility
@@ -145,7 +154,8 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+#zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'pure'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
@@ -229,6 +239,10 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set the terminal multiplexer title format.
 # zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
+
+# Auto set the terminal window and tab titles with the current command or directory
+zstyle ':prezto:module:terminal' auto-title 'yes'
+
 
 #
 # Tmux
