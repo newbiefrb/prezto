@@ -5,6 +5,15 @@ interface environment with sane defaults, aliases, functions, auto completion,
 and prompt themes.
 
 ## Installation
+brew install zsh-completion
+git clone --job 16 --recursive git@github.com:newbiefrb/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+# then make the symlinks using ln -sf for force since you have already zsh
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+
 
 ### Manual
 
@@ -20,7 +29,7 @@ version is **4.3.11**.
 02. Clone the repository:
 
     ```console
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    git clone --job 16 --recursive git@github.com:newbiefrb/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
     ```
 
     <details>
